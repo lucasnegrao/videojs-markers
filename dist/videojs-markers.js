@@ -154,7 +154,7 @@
                 return setting.markerTip.time(a) - setting.markerTip.time(b);
             });
             markersList.forEach(function (e, i) {
-                return e.index = i;
+                e.index = i;
             });
         }
         function addMarkers(newMarkers) {

@@ -3,8 +3,8 @@
  * @flow
  */
 'use strict';
-//export const __esModule = true;
-import video_js_1 from "video.js";
+exports.__esModule = true;
+var video_js_1 = require("video.js");
 // default setting
 var defaultSetting = {
     markerStyle: {
