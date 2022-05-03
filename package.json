@@ -4,12 +4,13 @@
   "version": "1.0.1",
   "main": "dist/videojs-markers.js",
   "peerDependencies": {
-    "video.js": ">=4"
+    "video.js": "^7.18.1"
   },
   "scripts": {
     "flow": "flow; test $? -eq 0 -o $? -eq 2"
   },
   "devDependencies": {
+    "@types/video.js": "^7.3.37",
     "babel-plugin-syntax-trailing-function-commas": "6.13.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-transform-flow-strip-types": "6.14.0",
