@@ -1,9 +1,12 @@
 {
+    "compileOnSave": true,
     "compilerOptions": {
-        "target": "es6",
-        "module": "commonjs"
+      "target": "es5",
+      "noImplicitAny": true,
+      "rootDir": ".",
+      "sourceMap": false
     },
     "exclude": [
-        "node_modules"
+      "node_modules"
     ]
-}
+  }
