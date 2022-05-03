@@ -158,7 +158,9 @@ function registerVideoJsMarkersPlugin(options) {
       return setting.markerTip.time(a) - setting.markerTip.time(b);
     });
 
-    markersList.forEach((e, i) => e.index=i); 
+    markersList.forEach((e: Marker, i) => {
+      e.index = i;
+    }); 
 
   }
 

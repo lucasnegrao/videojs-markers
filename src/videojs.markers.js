@@ -129,7 +129,9 @@ function registerVideoJsMarkersPlugin(options) {
         markersList.sort(function (a, b) {
             return setting.markerTip.time(a) - setting.markerTip.time(b);
         });
-        markersList.forEach(function (e, i) { return e.index = i; });
+        markersList.forEach(function (e, i) {
+            e.index = i;
+        });
     }
     function addMarkers(newMarkers) {
         newMarkers.forEach(function (marker) {
