@@ -3,7 +3,7 @@
  * @flow
  */
 'use strict';
-export const __esModule = true;
+//export const __esModule = true;
 import video_js_1 from "video.js";
 // default setting
 var defaultSetting = {
