@@ -140,7 +140,7 @@ function registerVideoJsMarkersPlugin(options) {
   }
 
 
-  /**
+  /**c
    * register the markers plugin (dependent on jquery)
    */
   let setting = videojs.mergeOptions(defaultSetting, options),

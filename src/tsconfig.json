@@ -1,12 +1,8 @@
-{
-    "compileOnSave": true,
-    "compilerOptions": {
-      "target": "es5",
-      "noImplicitAny": true,
-      "rootDir": ".",
-      "sourceMap": false
-    },
-    "exclude": [
-      "node_modules"
-    ]
-  }
+ {
+     "compilerOptions": {
+         "module": "es2015"
+     },
+     "exclude": [
+         "node_modules"
+     ]
+ }

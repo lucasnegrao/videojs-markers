@@ -1,27 +1,33 @@
 (function (global, factory) {
     if (typeof define === "function" && define.amd) {
-        define(['exports', "video.js"], factory);
+        define(['video.js'], factory);
     } else if (typeof exports !== "undefined") {
-        factory(exports, require("video.js"));
+        factory(require('video.js'));
     } else {
         var mod = {
             exports: {}
         };
-        factory(mod.exports, global.videojs);
+        factory(global.videojs);
         global.videojsMarkers = mod.exports;
     }
-})(this, function (exports, video_js_1) {
+})(this, function (_video) {
     /*! videojs-markers - v1.0.1 - 2022-05-03
     * Copyright (c) 2022 ; Licensed  */
     'use strict';
+
+    var _video2 = _interopRequireDefault(_video);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
 
     var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
         return typeof obj;
     } : function (obj) {
         return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
     };
-
-    exports.__esModule = true;
 
     // default setting
     var defaultSetting = {
@@ -96,7 +102,7 @@
     function registerVideoJsMarkersPlugin(options) {
         // copied from video.js/src/js/utils/merge-options.js since
         // videojs 4 doens't support it by defualt.
-        if (!video_js_1["default"].mergeOptions) {
+        if (!_video2.default.mergeOptions) {
             var isPlain = function isPlain(value) {
                 return !!value && (typeof value === 'undefined' ? 'undefined' : _typeof(value)) === 'object' && toString.call(value) === '[object Object]' && value.constructor === Object;
             };
@@ -123,11 +129,11 @@
                 return result;
             };
 
-            video_js_1["default"].mergeOptions = mergeOptions;
+            _video2.default.mergeOptions = mergeOptions;
         }
-        if (!video_js_1["default"].dom.createEl) {
-            video_js_1["default"].dom.createEl = function (tagName, props, attrs) {
-                var el = video_js_1["default"].Player.prototype.dom.createEl(tagName, props);
+        if (!_video2.default.dom.createEl) {
+            _video2.default.dom.createEl = function (tagName, props, attrs) {
+                var el = _video2.default.Player.prototype.dom.createEl(tagName, props);
                 if (!!attrs) {
                     Object.keys(attrs).forEach(function (key) {
                         el.setAttribute(key, attrs[key]);
@@ -136,10 +142,10 @@
                 return el;
             };
         }
-        /**
+        /**c
          * register the markers plugin (dependent on jquery)
          */
-        var setting = video_js_1["default"].mergeOptions(defaultSetting, options),
+        var setting = _video2.default.mergeOptions(defaultSetting, options),
             markersMap = {},
             markersList = [],
             // list of markers sorted by time
@@ -191,7 +197,7 @@
             }
         }
         function createMarkerDiv(marker) {
-            var markerDiv = video_js_1["default"].dom.createEl('div', {}, {
+            var markerDiv = _video2.default.dom.createEl('div', {}, {
                 'data-marker-key': marker.key,
                 'data-marker-time': setting.markerTip.time(marker)
             });
@@ -277,7 +283,7 @@
             });
         }
         function initializeMarkerTip() {
-            markerTip = video_js_1["default"].dom.createEl('div', {
+            markerTip = _video2.default.dom.createEl('div', {
                 className: 'vjs-tip',
                 innerHTML: "<div class='vjs-tip-arrow'></div><div class='vjs-tip-inner'></div>"
             });
@@ -310,7 +316,7 @@
         }
         // problem when the next marker is within the overlay display time from the previous marker
         function initializeOverlay() {
-            breakOverlay = video_js_1["default"].dom.createEl('div', {
+            breakOverlay = _video2.default.dom.createEl('div', {
                 className: 'vjs-break-overlay',
                 innerHTML: "<div class='vjs-break-overlay-text'></div>"
             });
@@ -460,6 +466,6 @@
             }
         };
     }
-    video_js_1["default"].registerPlugin('markers', registerVideoJsMarkersPlugin);
+    _video2.default.registerPlugin('markers', registerVideoJsMarkersPlugin);
 });
 //# sourceMappingURL=videojs-markers.js.map
